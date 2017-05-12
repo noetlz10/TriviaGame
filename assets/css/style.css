@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  background: url("../images/mario-bgG.gif") repeat center center;
+  margin: 0;
+  padding: 0;  
+  
+}
+
+img{
+  height: 250px;
+  margin:auto;
+  float: top;
+}
+
+.start{
+	padding:0;		
+}
+
+.button {
+  height: 10px;
+}
+
+h1{   
+	text-align: center;
+}
+.header{
+  padding: 10px;
+	height: 100px;
+	width: 100%;
+  margin-bottom: 10px;
+  
+}
+
+.mariopic{
+  height: 100px;
+  width: 100px;
+  display: block;
+}
+.banner{
+	height: 80px;
+  width: 100%;
+  font-family: 'Luckiest Guy', cursive;
+	display: block;
+  margin:auto;
+  font-size: 100px;
+  color: #d82800;
+}
+.startBtn{
+	width: 500px;
+}
+.trivSection{ 
+	margin-top: 100px;
+	text-align: center;
+ }
+ .question, .answers, .rightAnswer, .wrongAnswer, .gameOver, .score, .resetBtn{
+ 	padding: 10px;
+ 	font-size: 20px;
+ 	margin: 10px;
+  color: #fff;
+  font-family: 'Signika', sans-serif;
+  border-radius: 10px;
+  border-color: #333;
+  
+ }
+
+ /*buttons*/
+ 
+.redBtn:hover,
+.resetBtn:hover {
+  background-color: #d82800; 
+  border-color: #fff; 
+  opacity: 1;
+  position: relative;
+  top: -10px;
+  font-family: 'Signika', sans-serif;
+} 
+ 
+.redBtn, .resetBtn {
+  background-color: #d82800; 
+}
+
+.footer {
+  position: absolute;
+    padding: 15px 0;
+    text-align: center;
+    color: #fff;
+    font-family: 'Signika', sans-serif;
+}
