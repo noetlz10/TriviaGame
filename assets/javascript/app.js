@@ -5,6 +5,8 @@ var trivTime = 0;
 var rightCount = 0;
 var wrongCount = 0;
 var askCount = 1;
+var gameSound = new Audio("assets/images/01-main-theme-overworld.mp3");
+
 //======================
 var timer = "";
 var quesAsked = {
@@ -52,7 +54,7 @@ function createQuestions() {
     //assign div element to newDiv
     var newDiv = $('<div>');
     //Add a class to newDIv
-    newDiv.addClass('question'); //<--so i can style it in my CSS
+    newDiv.addClass('question');
     //Add text to question
     newDiv.text(question);
     //Add question to DOM
@@ -87,6 +89,8 @@ function checkAnswer() {
     var userAnswer = $(this).data('type');
     var correctAnswer = quesAsked[askCount]['correct'];
     var correctImg = quesAsked[askCount]['imageUrl'];
+    var audioWin = new Audio("assets/images/smb_powerup.wav");
+    var audioLoss = new Audio("assets/images/smb_mariodie.wav");
 
     var right = quesAsked[askCount]['right'];
     var wrong = quesAsked[askCount]['wrong'];
@@ -95,6 +99,7 @@ function checkAnswer() {
     if (userAnswer === correctAnswer) {
         //Update rightCount
         rightCount++;
+        audioWin.play();
         //Clears out triv Section
         $('.trivSection').empty();
         var newImg = $('<img>');
@@ -112,6 +117,7 @@ function checkAnswer() {
         clearInterval(timer)
             //Add 1 to question count to move to the next question
         askCount++;
+
        
         if (askCount <= 3) {
             //removes CORRECT! text and continues to create next question after 5 seconds
@@ -145,6 +151,7 @@ function checkAnswer() {
     else {
         wrongCount++;
         //Clears out triv Section
+        audioLoss.play();
         $('.trivSection').empty();
         var newImg = $('<img>');
         newImg.attr('src', correctImg);
@@ -160,6 +167,7 @@ function checkAnswer() {
         clearInterval(timer)
             //Add 1 to question count to move to the next question
         askCount++;
+        
 
         if (askCount <= 3) {
             setTimeout(function() {
@@ -255,13 +263,13 @@ function gameOver() {
     //When reset button is clicked.......
     $('.resetBtn').on('click', function() {
         $('.trivSection').empty()
-            //Starts game over
+        //Starts game over
         createQuestions();
     });
 }
 
 
-
 /*Main
 ==============================================================*/
+gameSound.play();
 start();

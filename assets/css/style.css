@@ -45,11 +45,11 @@ h1{
   font-family: 'Luckiest Guy', cursive;
 	display: block;
   margin:auto;
-  font-size: 100px;
+  font-size: 80px;
   color: #d82800;
 }
 .startBtn{
-	width: 500px;
+	width: 50%;
 }
 .trivSection{ 
 	margin-top: 100px;
@@ -84,8 +84,12 @@ h1{
 
 .footer {
   position: absolute;
-    padding: 15px 0;
-    text-align: center;
-    color: #fff;
-    font-family: 'Signika', sans-serif;
+  color: #fff;
+  font-family: 'Signika', sans-serif;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
 }
+
+
