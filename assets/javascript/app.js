@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 //Global Variables
 
 //Counter
@@ -273,3 +275,5 @@ function gameOver() {
 ==============================================================*/
 gameSound.play();
 start();
+
+});
